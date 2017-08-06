@@ -33,7 +33,7 @@ Tested on: TI-84 Plus Silver Edition and TI-84 Plus C Silver Edition
 2. Run it, and input two functions, as well as a prediction.
    * Note that if there are multiple solutions, the one that is closer to the prediction will be found.
 
-### Schedule
+### SCHEDULE
 
 This is a schedule look-up program for students. When executed, it uses the system time to calculate what class period/block is currently ongoing, which it uses along with an encoded list variable (of the schedule) to determine what class the student should be at then and their next class.
 
