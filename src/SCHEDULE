@@ -1,0 +1,58 @@
+
+0→P
+seq(expr(sub(getDtStr(3),I,2)),I,1,7,3)→L₁
+dayOfWk(L₁(1),L₁(2),L₁(3))-2→D
+
+seq(expr(sub(getTmStr(0),I,2)),I,1,4,3)→L₂
+abs(L₂(1)*60+L₂(2)-500)→M
+If (M≥260)
+Then
+6→P
+M-260→M
+End
+int(M/90)*2+P→P
+int(remainder(M,90)/40)+1+P→P
+
+UnArchive L₆
+L₆(D*10+P)→N
+L₆(D*10+P+1)→M
+If (N=M)
+L₆(D*10+P+2)→M
+Archive L₆
+Disp "          CURRENT:"
+Lbl A
+If N=0
+Disp "ETHICS"
+If N=1
+Disp "MATH"
+If N=2
+Disp "PHYSICS"
+If N=3
+Disp "CHEM"
+If N=4
+Disp "ENGLISH"
+If N=5
+Disp "TURKISH"
+If N=6
+Disp "ECON"
+If N=7
+Disp "TARIH"
+If N=8
+Disp "ADVISORY"
+If N=9
+Disp "SPANISH"
+If N=10
+Disp "TOK"
+If N=11
+Disp "CAS/EE"
+If N=12
+Disp "PE"
+If N=13
+Disp "ACTIVITY"
+
+If (M≠N)
+Then
+Disp "           NEXT:"
+M→N
+Goto A
+End

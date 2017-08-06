@@ -1,0 +1,80 @@
+0→X
+0→Y
+0→W
+UnArchive S
+S→O
+Archive S
+
+ClrDraw
+FnOff 
+AxesOff
+GridOff
+ZStandard
+
+Degree
+
+Circle(0,­3,4.1,BLACK,1)
+For(I,0,11)
+Pt-On(4.4*cos(I/12*360),4.5*sin(I/12*360)-3,BLACK)
+End
+
+
+Lbl Z
+If (getKey)
+Then
+Goto F
+End
+TextColor(NAVY)
+Text(­1,10,85,getDtStr(0))
+TextColor(RED)
+Text(­1,30,100,getTmStr(0))
+
+expr(sub(getTmStr(0),4,2))→B
+expr(sub(getTmStr(0),1,2))→A
+remainder(checkTmr(0)-O,60)→C
+
+­remainder(A,12)/12*360+90→A
+If (A≠X)
+Then
+Line(0,­3,cos(X)*3,­3+sin(X)*3,WHITE)
+End
+
+­(B)/60*360+90→B
+If (B≠Y)
+Then
+Line(0,­3,cos(Y)*3.9,­3+sin(Y)*3.9,WHITE)
+End
+
+­(C)/60*360+90→C
+If (C≠W)
+Then
+Line(0,­3,cos(W)*3.5,­3+sin(W)*3.5,WHITE)
+End
+
+Line(0,­3,cos(A)*3,­3+sin(A)*3,NAVY)
+Line(0,­3,cos(B)*3.9,­3+sin(B)*3.9,LTBLUE)
+Line(0,­3,cos(C)*3.5,­3+sin(C)*3.5,RED)
+
+A→X
+B→Y
+C→W
+Goto Z
+
+Lbl F
+DelVar A
+DelVar B
+DelVar C
+DelVar X
+DelVar Y
+DelVar W
+DelVar O
+DelVar Z
+DelVar F
+DelVar I
+ClrDraw
+AxesOn BLACK
+GridLine LTGRAY
+ClrHome
+FnOn 
+"
+Return

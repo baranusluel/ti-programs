@@ -1,0 +1,9 @@
+:THIS IS AN EXTRA SCRIPT USED IN THE INSTALLATION OF 'CLOCK'
+expr(sub(getTmStr(0),4,2))→A
+A→B
+While (A=B)
+A→B
+expr(sub(getTmStr(0),4,2))→A
+End
+checkTmr(0)→S
+Archive S
